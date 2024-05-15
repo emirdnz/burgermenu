@@ -1,4 +1,5 @@
 ﻿using hamburgermenu.entites;
+using hamburgermenu.entitiy.entites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
@@ -18,11 +19,18 @@ namespace hamburgermenu.context
 
         }
 
-       public DbSet<HamburgerName> hamburgermenus { get; set; }
-       
-       public DbSet<Category> categories { get; set; }
 
+        public DbSet<Drinks> Drinks { get; set; }   
 
+        public DbSet<HamburgerMenuName> hamburgermenunames { get; set; }
+
+        public DbSet<MenuList> MenuLists { get; set; }
+
+        public DbSet<Orders> Orders { get; set; }
+
+        public DbSet<Sauce> Sauces { get; set;}
+
+        public DbSet<User> Users { get; set; }  
 
     }
 }

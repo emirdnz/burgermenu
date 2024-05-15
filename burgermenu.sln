@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hamburgermenu.data", "hamburgermenu.entity\hamburgermenu.data.csproj", "{DC7F7D14-C15B-4707-B13D-3BB7151A4A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hamburgermenu.data", "hamburgermenu.entity\hamburgermenu.data.csproj", "{DC7F7D14-C15B-4707-B13D-3BB7151A4A03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hamburgermenu.entitiy", "hamburgermenu.entitiy\hamburgermenu.entitiy.csproj", "{96E8F5AB-5848-4C54-94B0-2B7D732A92B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hamburgermenu.entitiy", "hamburgermenu.entitiy\hamburgermenu.entitiy.csproj", "{96E8F5AB-5848-4C54-94B0-2B7D732A92B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hamburgerMenu", "hamburgerMenu\hamburgerMenu.csproj", "{7085AB33-6A24-46DD-A128-6DE8FA5DD08A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hamburgerMenu.UI", "hamburgerMenu\hamburgerMenu.UI.csproj", "{7085AB33-6A24-46DD-A128-6DE8FA5DD08A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

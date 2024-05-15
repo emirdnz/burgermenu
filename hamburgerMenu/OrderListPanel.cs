@@ -10,18 +10,15 @@ using System.Windows.Forms;
 
 namespace hamburgerMenu
 {
-    public partial class Form3 : Form
+    public partial class OrderListPanel : Form
     {
-        public Form3()
+        public OrderListPanel()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add("asd");
-            comboBox1.Items.Add("dd");
-
 
         }
     }
