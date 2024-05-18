@@ -1,4 +1,7 @@
 ﻿using hamburgermenu.context;
+using hamburgermenu.entitiy.entites;
+using hamburgerMenu.UI;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +16,15 @@ namespace hamburgerMenu
 {
     public partial class OrderListPanel : Form
     {
+
+         private Orders _order;
+        public Orders UpdatedOrder => _order;
+
+
         public OrderListPanel()
         {
             InitializeComponent();
+          
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -28,6 +37,7 @@ namespace hamburgerMenu
 
         }
 
+        
 
         private void LoadOrders()
         {
@@ -55,9 +65,46 @@ namespace hamburgerMenu
         {
             LoadOrders();
         }
-      
+
+
+
+        HamburgerMenudb db = new HamburgerMenudb(); 
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                if (int.TryParse(listView1.SelectedItems[0].Text, out int orderId))
+                {
+                    var order = db.Orders.Find(orderId);
+                    if (order != null)
+                    {
+                        db.Orders.Remove(order);
+                        db.SaveChanges();
+                        LoadOrders();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Silinmek istenen sipariş bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Geçersiz sipariş ID.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz siparişi seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         
        
-        
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
