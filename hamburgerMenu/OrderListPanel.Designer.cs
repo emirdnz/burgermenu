@@ -34,12 +34,10 @@
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            label3 = new Label();
-            label4 = new Label();
             button1 = new Button();
             button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            columnHeader4 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
@@ -62,15 +60,17 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader6 });
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
-            listView1.Location = new Point(12, 114);
+            listView1.LabelEdit = true;
+            listView1.Location = new Point(12, 119);
             listView1.Name = "listView1";
-            listView1.Size = new Size(472, 296);
+            listView1.Size = new Size(727, 296);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -83,77 +83,50 @@
             // 
             // columnHeader3
             // 
-            columnHeader3.Text = "siparis fiyatı";
+            columnHeader3.Text = "Soslar";
             columnHeader3.Width = 120;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(598, 114);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Siparişi Silme";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(595, 243);
-            label4.Name = "label4";
-            label4.Size = new Size(103, 15);
-            label4.TabIndex = 4;
-            label4.Text = "Sipariş Düzenleme";
             // 
             // button1
             // 
-            button1.Location = new Point(592, 161);
+            button1.Location = new Point(15, 463);
             button1.Name = "button1";
-            button1.Size = new Size(100, 36);
+            button1.Size = new Size(100, 42);
             button1.TabIndex = 6;
             button1.Text = "SİL";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(598, 310);
+            button2.Location = new Point(142, 463);
             button2.Name = "button2";
             button2.Size = new Size(100, 42);
             button2.TabIndex = 7;
             button2.Text = "DÜZENLE";
             button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // columnHeader4
             // 
-            textBox1.Location = new Point(592, 132);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 9;
-            textBox1.Text = "ID giriniz";
+            columnHeader4.Text = "Sipariş Boy Seçimi";
+            columnHeader4.Width = 120;
             // 
-            // textBox2
+            // columnHeader6
             // 
-            textBox2.Location = new Point(598, 272);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 10;
-            textBox2.Text = "ID giriniz";
+            columnHeader6.Text = "Toplam Fiyat";
+            columnHeader6.Width = 200;
             // 
             // OrderListPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            ClientSize = new Size(1145, 618);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(listView1);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "OrderListPanel";
             Text = "Form2";
+            Load += OrderListPanel_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,11 +139,9 @@
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
-        private Label label3;
-        private Label label4;
         private Button button1;
         private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader6;
     }
 }
