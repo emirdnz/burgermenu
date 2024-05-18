@@ -38,20 +38,21 @@
             boysecim1 = new RadioButton();
             boysecim2 = new RadioButton();
             boysecim3 = new RadioButton();
-            listView1 = new ListView();
+            Listeleme = new ListView();
             menu = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             button2 = new Button();
             sossecim1 = new CheckBox();
-            sossecım2 = new CheckBox();
+            sossecim3 = new CheckBox();
             label2 = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
+            sossecim2 = new CheckBox();
+            sossecim4 = new CheckBox();
+            sossecim5 = new CheckBox();
+            sossecim6 = new CheckBox();
             button1 = new Button();
+            columnHeader4 = new ColumnHeader();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -141,18 +142,18 @@
             boysecim3.Text = "Büyük";
             boysecim3.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // Listeleme
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { menu, columnHeader2, columnHeader1, columnHeader3 });
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(24, 109);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(749, 280);
-            listView1.TabIndex = 9;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            Listeleme.Columns.AddRange(new ColumnHeader[] { columnHeader4, menu, columnHeader2, columnHeader1, columnHeader3 });
+            Listeleme.FullRowSelect = true;
+            Listeleme.GridLines = true;
+            Listeleme.Location = new Point(24, 109);
+            Listeleme.Name = "Listeleme";
+            Listeleme.Size = new Size(749, 280);
+            Listeleme.TabIndex = 9;
+            Listeleme.UseCompatibleStateImageBehavior = false;
+            Listeleme.View = View.Details;
+            Listeleme.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
             // menu
             // 
@@ -182,26 +183,27 @@
             button2.TabIndex = 11;
             button2.Text = "Siparişi Onayla";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // sossecim1
             // 
             sossecim1.AutoSize = true;
-            sossecim1.Location = new Point(290, 59);
+            sossecim1.Location = new Point(290, 36);
             sossecim1.Name = "sossecim1";
             sossecim1.Size = new Size(65, 19);
             sossecim1.TabIndex = 4;
             sossecim1.Text = "Ketcap ";
             sossecim1.UseVisualStyleBackColor = true;
             // 
-            // sossecım2
+            // sossecim3
             // 
-            sossecım2.AutoSize = true;
-            sossecım2.Location = new Point(290, 84);
-            sossecım2.Name = "sossecım2";
-            sossecım2.Size = new Size(52, 19);
-            sossecım2.TabIndex = 5;
-            sossecım2.Text = "BBQ ";
-            sossecım2.UseVisualStyleBackColor = true;
+            sossecim3.AutoSize = true;
+            sossecim3.Location = new Point(290, 84);
+            sossecim3.Name = "sossecim3";
+            sossecim3.Size = new Size(52, 19);
+            sossecim3.TabIndex = 5;
+            sossecim3.Text = "BBQ ";
+            sossecim3.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -212,45 +214,45 @@
             label2.TabIndex = 12;
             label2.Text = "MENU SEÇİMİ";
             // 
-            // checkBox1
+            // sossecim2
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(290, 36);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(74, 19);
-            checkBox1.TabIndex = 13;
-            checkBox1.Text = "Mayonez";
-            checkBox1.UseVisualStyleBackColor = true;
+            sossecim2.AutoSize = true;
+            sossecim2.Location = new Point(290, 59);
+            sossecim2.Name = "sossecim2";
+            sossecim2.Size = new Size(74, 19);
+            sossecim2.TabIndex = 13;
+            sossecim2.Text = "Mayonez";
+            sossecim2.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // sossecim4
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(370, 36);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(61, 19);
-            checkBox2.TabIndex = 14;
-            checkBox2.Text = "Hardal";
-            checkBox2.UseVisualStyleBackColor = true;
+            sossecim4.AutoSize = true;
+            sossecim4.Location = new Point(370, 36);
+            sossecim4.Name = "sossecim4";
+            sossecim4.Size = new Size(61, 19);
+            sossecim4.TabIndex = 14;
+            sossecim4.Text = "Hardal";
+            sossecim4.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // sossecim5
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(370, 59);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(64, 19);
-            checkBox3.TabIndex = 15;
-            checkBox3.Text = "Acı Sos";
-            checkBox3.UseVisualStyleBackColor = true;
+            sossecim5.AutoSize = true;
+            sossecim5.Location = new Point(370, 59);
+            sossecim5.Name = "sossecim5";
+            sossecim5.Size = new Size(64, 19);
+            sossecim5.TabIndex = 15;
+            sossecim5.Text = "Acı Sos";
+            sossecim5.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // sossecim6
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(370, 84);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(74, 19);
-            checkBox4.TabIndex = 16;
-            checkBox4.Text = "Cheddar ";
-            checkBox4.UseVisualStyleBackColor = true;
+            sossecim6.AutoSize = true;
+            sossecim6.Location = new Point(370, 84);
+            sossecim6.Name = "sossecim6";
+            sossecim6.Size = new Size(74, 19);
+            sossecim6.TabIndex = 16;
+            sossecim6.Text = "Cheddar ";
+            sossecim6.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -262,23 +264,27 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "ID";
+            // 
             // OrderPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(843, 450);
             Controls.Add(button1);
-            Controls.Add(checkBox4);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(sossecim6);
+            Controls.Add(sossecim5);
+            Controls.Add(sossecim4);
+            Controls.Add(sossecim2);
             Controls.Add(label2);
             Controls.Add(button2);
-            Controls.Add(listView1);
+            Controls.Add(Listeleme);
             Controls.Add(boysecim3);
             Controls.Add(boysecim2);
             Controls.Add(boysecim1);
-            Controls.Add(sossecım2);
+            Controls.Add(sossecim3);
             Controls.Add(sossecim1);
             Controls.Add(menulisteekleme);
             Controls.Add(menusecimlerilistele);
@@ -306,19 +312,20 @@
         private RadioButton boysecim1;
         private RadioButton boysecim2;
         private RadioButton boysecim3;
-        private ListView listView1;
+        private ListView Listeleme;
         private Button button2;
         private CheckBox sossecim1;
-        private CheckBox sossecım2;
+        private CheckBox sossecim3;
         private Label label2;
         private ColumnHeader menu;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
+        private CheckBox sossecim2;
+        private CheckBox sossecim4;
+        private CheckBox sossecim5;
+        private CheckBox sossecim6;
         private Button button1;
+        private ColumnHeader columnHeader4;
     }
 }

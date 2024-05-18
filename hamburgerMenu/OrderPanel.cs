@@ -1,5 +1,6 @@
 using hamburgermenu.context;
 using hamburgermenu.entites;
+using hamburgermenu.entitiy.entites;
 using Microsoft.Data.SqlClient;
 using Microsoft.Web.WebView2.Core;
 
@@ -60,56 +61,50 @@ namespace hamburgerMenu
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            string selectedItem = menusecimlerilistele.SelectedItem.ToString();
-            listView1.Items.Add(selectedItem);
+
         }
+
+
+        private int nextId = 1;
 
         private void menulisteekleme_Click(object sender, EventArgs e)
         {
 
 
-            //if (sossecim1.Checked)
-            //{
-            //    listView1.Items.Add("Ketçap");
-            //}
-            //if (sossecým2.Checked)
-            //{
-            //    listView1.Items.Add("BBQ");
-            //}
-            //if (boysecim1.Checked)
-            //{
-            //    listView1.Items.Add("Küçük Boy");
-            //}
-            //if (boysecim2.Checked)
-            //{
-            //    listView1.Items.Add("Orta Boy");
-            //}
-            //if (boysecim3.Checked)
-            //{
-            //    listView1.Items.Add("Büyük Boy");
-            //}
-
-           
+            if (string.IsNullOrEmpty(menusecimlerilistele.Text)) return;
 
 
+            List<string> selectedSoslar = new List<string>();
 
-            //ListViewItem item1 = new ListViewItem("item1", 0);
-            //// Place a check mark next to the item.
-            //item1.Checked = true;
-            //item1.SubItems.Add("");
-           
-            //ListViewItem item2 = new ListViewItem("item2", 1);
-            //item2.SubItems.Add("");
 
-          
-            //ListViewItem item3 = new ListViewItem("item3", 0);
-            //// Place a check mark next to the item.
-            //item3.Checked = true;
-            //item3.SubItems.Add("7");
-            //item3.SubItems.Add("8");
-            //item3.SubItems.Add("9");
+            if (sossecim1.Checked) selectedSoslar.Add("Ketçap");
+            if (sossecim2.Checked) selectedSoslar.Add("Mayonez");
+            if (sossecim3.Checked) selectedSoslar.Add("BBQ");
+            if (sossecim4.Checked) selectedSoslar.Add("Hardal");
+            if (sossecim5.Checked) selectedSoslar.Add("Acý Sos");
+            if (sossecim6.Checked) selectedSoslar.Add("Cheddar");
 
-           
+
+            string soslar = string.Join(",", selectedSoslar);
+
+
+            ListViewItem item = new ListViewItem(nextId.ToString());
+            item.SubItems.Add(menusecimlerilistele.Text);
+            item.SubItems.Add(soslar);
+
+            string boyut = "";
+            if (boysecim1.Checked) boyut = "Küçük";
+            if (boysecim2.Checked) boyut = "Orta";
+            if (boysecim3.Checked) boyut = "Büyük";
+
+            item.SubItems.Add(boyut);
+
+
+            Listeleme.Items.Add(item);
+
+            nextId++;
+
+
 
 
 
@@ -124,6 +119,29 @@ namespace hamburgerMenu
         {
             OrderListPanel orderListPanel = new OrderListPanel();
             orderListPanel.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var context = new HamburgerMenudb())
+            {
+                foreach (ListViewItem item in Listeleme.Items)
+                {
+                    var siparis = new Orders
+                    {
+                        Menu = item.SubItems[1].Text,
+                        Soslar = item.SubItems[2].Text,
+                        Boyut = item.SubItems[3].Text,
+                        Fiyat = 50.0M,
+                        ADDTime = DateTime.Now,
+                    };
+
+                    context.Orders.Add(siparis);
+                }
+
+                context.SaveChanges();
+            }
+            MessageBox.Show("Sipariþler onaylandý ve veritabanýna eklendi.");
         }
     }
 }

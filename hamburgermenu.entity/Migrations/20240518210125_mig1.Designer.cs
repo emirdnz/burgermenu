@@ -12,7 +12,7 @@ using hamburgermenu.context;
 namespace hamburgermenu.data.Migrations
 {
     [DbContext(typeof(HamburgerMenudb))]
-    [Migration("20240512164447_mig1")]
+    [Migration("20240518210125_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -108,8 +108,23 @@ namespace hamburgermenu.data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<DateTime>("OrderTime")
+                    b.Property<DateTime>("ADDTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Boyut")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Fiyat")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Menu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Soslar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

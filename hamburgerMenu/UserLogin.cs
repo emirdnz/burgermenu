@@ -33,6 +33,7 @@ namespace hamburgerMenu.UI
             {
                 OrderPanel orderPanel = new OrderPanel();   
                 orderPanel.Show();
+                this.Hide();
             }
             else
             {
