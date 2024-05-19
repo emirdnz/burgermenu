@@ -17,9 +17,7 @@ namespace hamburgerMenu
     public partial class OrderListPanel : Form
     {
 
-         private Orders _order;
-        public Orders UpdatedOrder => _order;
-
+     
 
         public OrderListPanel()
         {
@@ -104,7 +102,36 @@ namespace hamburgerMenu
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            if (listView1.SelectedItems.Count > 0)
+            {
+                if (int.TryParse(listView1.SelectedItems[0].Text, out int orderId))
+                {
+                    var order = db.Orders.Find(orderId);
+                    if (order != null)
+                    {
+                        using (var editForm = new EditOrderForm(order))
+                        {
+                            if (editForm.ShowDialog() == DialogResult.OK)
+                            {
+                                db.SaveChanges();
+                                LoadOrders();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Düzenlemek istenen sipariş bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Geçersiz sipariş ID.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen düzenlemek istediğiniz siparişi seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
