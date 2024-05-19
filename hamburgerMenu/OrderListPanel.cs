@@ -81,6 +81,7 @@ namespace hamburgerMenu
                         db.Orders.Remove(order);
                         db.SaveChanges();
                         LoadOrders();
+                        MessageBox.Show("Sipariş başarılı bir şekilde silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

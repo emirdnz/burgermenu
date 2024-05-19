@@ -38,6 +38,7 @@
             columnHeader6 = new ColumnHeader();
             button1 = new Button();
             button2 = new Button();
+            columnHeader5 = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
@@ -60,13 +61,13 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader6 });
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader6, columnHeader5 });
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
             listView1.LabelEdit = true;
             listView1.Location = new Point(12, 119);
             listView1.Name = "listView1";
-            listView1.Size = new Size(727, 296);
+            listView1.Size = new Size(887, 296);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -116,6 +117,11 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Eklenme Tarihi";
+            columnHeader5.Width = 200;
+            // 
             // OrderListPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -145,5 +151,6 @@
         private Button button2;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader5;
     }
 }
