@@ -20,7 +20,6 @@ namespace hamburgerMenu.UI
             InitializeComponent();
             _order = order;
 
-            // Form alanlarını doldur
             txtMenu.Text = _order.Menu;
             txtSoslar.Text = _order.Soslar;
             txtBoyut.Text = _order.Boyut;
@@ -30,7 +29,7 @@ namespace hamburgerMenu.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Güncellenen bilgileri order nesnesine aktar
+           
             _order.Menu = txtMenu.Text;
             _order.Soslar = txtSoslar.Text;
             _order.Boyut = txtBoyut.Text;
@@ -44,6 +43,11 @@ namespace hamburgerMenu.UI
         }
 
         private void EditOrderForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditOrderForm_Load_1(object sender, EventArgs e)
         {
 
         }
